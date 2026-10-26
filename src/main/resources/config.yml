@@ -1,0 +1,64 @@
+# BoxAFK config. /afk reload applies every change here (regions included).
+
+# AFK regions. Create the region with WorldGuard first, add it here, then /afk reload.
+# A region that does not exist is skipped with a warning in the console.
+afk-regions:
+  - world: Lobby
+    region: afk
+
+# Seconds of AFK in a region before one reward (no linked accounts online).
+reward-interval: 300
+
+# Linked accounts ONLINE (anywhere on the server, the AFK one included) -> % shorter reward interval.
+# The value is taken when a countdown starts; changes apply from the next countdown.
+group-reduction:
+  1: 0
+  2: 20
+  3: 30
+
+# Accounts per IP that can be linked together.
+max-group-size: 3
+
+# Accounts of one IP that get AFK rewards at the same time (linked or not). 0 = no limit.
+# The first ones to enter the region get the slots; the others wait and start counting when a slot frees.
+max-rewarded-per-ip: 3
+
+link:
+  # Seconds between two /afk link from the same player.
+  cooldown: 10
+  # Seconds the target has to click [Xác nhận] / [Từ chối].
+  invite-expire: 60
+  # Seconds to type the number shown on screen.
+  captcha-time: 15
+  captcha-min: 1
+  captcha-max: 100
+
+rewards:
+  # Rewards that get the rank bonus. %amount% = amount + amount * bonus%.
+  # Fractions carry over to the next reward (10 + 15% = 11.5 -> 11, then 12, ...).
+  # %player% / %player_name% = player name.
+  scaled:
+    gem:
+      amount: 10
+      commands:
+        - 'boxcore gem give %player% %amount%'
+  # Console commands run as written, no rank bonus. Add as many as you want.
+  fixed:
+    - 'mi give MATERIAL AFK_TOKEN %player% 1'
+  #  - 'crates key give %player% afk 1'
+
+# Permission -> % extra on 'scaled' rewards. Several permissions: the highest one counts (no stacking).
+# Multiplier xN = +(N-1)*100: x1.5 = +50, x2 = +100, x9 = +800.
+rank-bonus:
+  boxafk.bonus.elite: 50      # x1.5
+  boxafk.bonus.titan: 100     # x2
+  boxafk.bonus.hero: 200      # x3
+  boxafk.bonus.master: 300    # x4
+  boxafk.bonus.legend: 400    # x5
+  boxafk.bonus.champion: 500  # x6
+  boxafk.bonus.zeus: 600      # x7
+  boxafk.bonus.ultimate: 700  # x8
+  boxafk.bonus.overlord: 800  # x9
+
+# Sound when a reward is given. '' disables it.
+reward-sound: 'ENTITY_PLAYER_LEVELUP'

@@ -1,0 +1,22 @@
+name: BoxAFK
+version: '${version}'
+main: com.dex.boxafk.BoxAfkPlugin
+api-version: '1.21'
+description: AFK region rewards with IP-linked account groups
+authors: [dex]
+depend: [WorldGuard]
+softdepend: [PlaceholderAPI]
+
+commands:
+  afk:
+    description: AFK rewards and account linking
+    usage: /afk [link|accept|deny|unlink|info]
+    aliases: [boxafk]
+
+permissions:
+  boxafk.use:
+    description: /afk link, accept, deny, unlink, info
+    default: true
+  boxafk.admin:
+    description: /afk admin info|unlink, /afk reload
+    default: op

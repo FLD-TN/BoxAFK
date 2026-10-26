@@ -1,0 +1,95 @@
+# BoxAFK messages. An empty string disables a message.
+# Colours: &a &l ...  |  hex &#55FF55 <#55FF55> {#55FF55}  |  <gradient:#55FF55:#AAFFAA>text</gradient>
+# Tokens in {braces} are filled by the plugin.
+
+prefix: '&8(&a&lAFK&8) &r'
+
+# --- AFK zone ---
+# {time} = mm:ss left, {reduction} = % shorter interval for this countdown
+actionbar: '&a&lAFK &a▸ &7Nhận thưởng trong: &e{time}'
+# Action bar while waiting for a free slot of the IP (max-rewarded-per-ip). {max}
+actionbar-waiting: '&a&lAFK &a▸ &cMạng của bạn đã đủ {max} tài khoản nhận thưởng'
+zone-entered: '&aBạn đang ở trong khu vực AFK.'
+# Second line on entering. {count} {max} {names}
+zone-enter: '&7Tài khoản liên kết: &a{count}/{max} &7(&f{names}&7)'
+# Extra line when the countdown is shorter. {reduction}
+zone-enter-reduction: '&7Thời gian nhận thưởng được giảm &a{reduction}%&7.'
+zone-leave: '&cBạn đã ra ngoài khu vực AFK.'
+# {max}
+zone-ip-limit: '&cMạng (IP) của bạn đã có {max} tài khoản đang nhận thưởng AFK. Bạn sẽ bắt đầu được tính thời gian khi có chỗ trống.'
+# {bonus} = rank bonus %
+reward-received: '&aBạn đã nhận thưởng AFK!'
+reward-received-bonus: '&aBạn đã nhận thưởng AFK! &7(Bonus rank: &a+{bonus}%&7)'
+
+# --- Linking ---
+link-usage: '&7Dùng: &a/afk link <tên>'
+link-offline: '&cTài khoản &f{player} &ckhông online.'
+link-self: '&cHãy nhập tên tài khoản phụ, không phải tài khoản đang dùng.'
+link-cooldown: '&cVui lòng đợi &f{seconds} giây &ctrước khi liên kết tiếp.'
+link-different-ip: '&cTài khoản &f{player} &ckhông dùng cùng mạng (IP) với tài khoản này.'
+link-already: '&cTài khoản &f{player} &cđã được liên kết rồi.'
+link-full: '&cMạng này đã liên kết đủ &f{max}/{max} &ctài khoản.'
+link-target-busy: '&cTài khoản &f{player} &cđang chờ xác nhận một liên kết khác.'
+link-sender-busy: '&cTài khoản này đang trong bước xác nhận liên kết, hãy hoàn tất hoặc gõ &f"cancel" &ctrước.'
+# {player} {seconds}
+link-sent: '&7Hãy vào tài khoản &a{player} &7và bấm &a[Xác nhận] &7trong &f{seconds} giây &7để hoàn tất liên kết.'
+# Shown on the account being linked. {player} = the account that ran /afk link; {accept} / {deny} = buttons below.
+invite-received: '&7Yêu cầu liên kết với tài khoản &a{player}&7. {accept} {deny}'
+button-accept: '&a&l[Xác nhận]'
+button-accept-hover: '&7Bấm để xác nhận liên kết'
+button-deny: '&c&l[Huỷ]'
+button-deny-hover: '&7Bấm để huỷ yêu cầu liên kết'
+no-invite: '&cKhông có yêu cầu liên kết nào đang chờ.'
+invite-denied-target: '&7Đã huỷ yêu cầu liên kết với tài khoản &f{player}&7.'
+invite-denied-sender: '&cYêu cầu liên kết với tài khoản &f{player} &cđã bị huỷ.'
+invite-expired-target: '&7Yêu cầu liên kết với tài khoản &f{player} &7đã hết hạn.'
+invite-expired-sender: '&cYêu cầu liên kết với tài khoản &f{player} &cđã hết hạn.'
+# Re-check at [Xác nhận] failed; the reason line (one of the link-* messages) follows.
+link-failed-sender: '&cLiên kết với tài khoản &f{player} &cthất bại.'
+
+# --- Captcha ---
+# {seconds}
+captcha-start: '&7Nhập số đang hiện trên màn hình vào chat trong &f{seconds} giây&7. Gõ &f"cancel" &7để huỷ.'
+captcha-title: '&a&l{number}'
+captcha-subtitle: '&7Nhập số này vào chat &8- &f{seconds}s'
+captcha-wrong: '&cSai mã! Nhập lại số trên màn hình hoặc gõ &f"cancel" &cđể huỷ xác nhận.'
+captcha-cancelled: '&7Đã huỷ xác nhận liên kết.'
+captcha-cancelled-sender: '&cĐã huỷ xác nhận liên kết trên tài khoản &f{player}&c.'
+captcha-timeout: '&cHết thời gian xác nhận, liên kết đã bị huỷ.'
+captcha-timeout-sender: '&cTài khoản &f{player} &ckhông nhập mã kịp, liên kết đã bị huỷ.'
+captcha-waiting-sender: '&7Đang chờ nhập mã xác nhận trên tài khoản &a{player}&7...'
+
+# --- Result ---
+link-success: '&aLiên kết thành công!'
+# {count} {max} {names}
+group-line: '&7Tài khoản liên kết: &a{count}/{max} &7(&f{names}&7)'
+unlink-success: '&7Đã huỷ liên kết tài khoản này.'
+unlink-notify: '&7Tài khoản &c{player} &7đã rời khỏi liên kết.'
+not-linked: '&cTài khoản này chưa liên kết với tài khoản nào.'
+ip-changed: '&cTài khoản này đã bị gỡ liên kết vì đăng nhập từ mạng khác.'
+group-dissolved: '&7Liên kết đã bị huỷ vì chỉ còn một tài khoản.'
+
+# --- /afk info ---
+info-header: '&aTài khoản liên kết &7({count}/{max})'
+# {player} {status}
+info-entry: '&7・&f{player} {status}'
+status-online: ''
+status-offline: ''
+status-afk: ''
+
+# --- Commands ---
+no-permission: '&cBạn không có quyền.'
+player-only: '&cLệnh này chỉ dùng trong game.'
+usage:
+  - '&a&lBoxAFK'
+  - '&a/afk link <tên> &7・liên kết với tài khoản phụ cùng mạng'
+  - '&a/afk unlink &7・huỷ liên kết tài khoản này'
+  - '&a/afk info &7・xem các tài khoản đã liên kết'
+usage-admin:
+  - '&a/afk admin info <tên> &7・ xem nhóm của người chơi'
+  - '&a/afk admin unlink <tên> &7・ gỡ người chơi khỏi nhóm'
+  - '&a/afk reload &7・tải lại config'
+admin-unknown-player: '&cKhông tìm thấy người chơi &f{player}&c.'
+admin-not-linked: '&f{player} &7chưa liên kết với tài khoản nào.'
+admin-unlinked: '&aĐã gỡ &f{player} &akhỏi nhóm liên kết.'
+reloaded: '&aĐã tải lại BoxAFK. Vùng AFK: &f{regions}'
